@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31521.260
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Collatz", "Collatz\Collatz.csproj", "{3320F1CE-4E4E-49A6-881E-DBE9B45D3C86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3320F1CE-4E4E-49A6-881E-DBE9B45D3C86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3320F1CE-4E4E-49A6-881E-DBE9B45D3C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3320F1CE-4E4E-49A6-881E-DBE9B45D3C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3320F1CE-4E4E-49A6-881E-DBE9B45D3C86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {94212A7E-37C5-4BF5-B80A-34B22B4F6DD9}
+	EndGlobalSection
+EndGlobal
