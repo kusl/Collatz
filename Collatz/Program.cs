@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Numerics;
 
 namespace Collatz
 {
@@ -7,40 +8,40 @@ namespace Collatz
     {
         static void Main()
         {
-            Dictionary<UInt64, int> dictionary= new Dictionary<UInt64, int>();
-            UInt64 max = UInt64.MaxValue;
-            for (UInt64 input = 1; input < max; input++)
+            // BigInteger represents an aribtrarily large number, it has no upper bound.
+            // This allows you to continue no matter how many steps it takes to reach a value of 1.
+            Dictionary<ulong, BigInteger> dictionary = new Dictionary<ulong, BigInteger>();
+            for (ulong input = 1; input < ulong.MaxValue; input++)
             {
-                int result = Collatz(input);
+                // No need to write a full line.
+                // Separate responsibility, output from main and let the Collatz method focus on the conjecture work.
+                Console.Write($"Calculating {input}: ");
+
+                // Store the result in a BigInteger
+                BigInteger result = Collatz(input);
                 dictionary.Add(input, result);
+
+                // Write your count and complete the line with a break.
+                Console.Write($"{result}\n");
             }
+            Console.ReadKey();
         }
-        static UInt64 IfEven(UInt64 input)
+        static BigInteger Collatz(ulong input)
         {
-            return input / 2;
-        }
-        static UInt64 IfOdd(UInt64 input)
-        {
-            return 3 * input + 1;
-        }
-        static int Collatz(UInt64 input)
-        {
-            UInt64 originalInput = input;
-            Console.WriteLine(input);
-            int counter = 0;
-            while (input > 1)
+            // It's better to modify a local variable than your incoming one if you need to retain the original value.
+            BigInteger value = input;
+
+            // See the notes about BigInteger above.
+            BigInteger counter = 0;
+            while (value > 1)
             {
                 counter++;
-                if (input % 2 == 0)
-                {
-                    input = IfEven(input);
-                }
+                if (value % 2 == 0)
+                    value /= 2;
                 else
-                {
-                    input = IfOdd(input);
-                }
+                    value = 3 * value + 1;
             }
-            Console.WriteLine($"My calculation for Collatz counter for {originalInput} is {counter}.");
+
             return counter;
         }
     }
